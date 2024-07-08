@@ -9,16 +9,12 @@ import { getAllIngredients } from '../../services/ingredients/reducer';
 export const BurgerIngredients: FC = () => {
   const ingredients = useSelector(getAllIngredients);
 
-  const buns = useMemo(
-    () => ingredients.filter((item) => item.type === 'bun'),
-    [ingredients]
-  );
-  const sauces = useMemo(
-    () => ingredients.filter((item) => item.type === 'sauce'),
-    [ingredients]
-  );
-  const mains = useMemo(
-    () => ingredients.filter((item) => item.type === 'main'),
+  const { buns, sauces, mains } = useMemo(
+    () => ({
+      buns: ingredients.filter((item) => item.type === 'bun'),
+      sauces: ingredients.filter((item) => item.type === 'sauce'),
+      mains: ingredients.filter((item) => item.type === 'main')
+    }),
     [ingredients]
   );
 

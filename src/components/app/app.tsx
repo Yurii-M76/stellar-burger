@@ -69,10 +69,14 @@ const App = () => {
         />
 
         <Route path='*' element={<NotFound404 />} />
+
+        <Route path='/ingredients/:id' element={<IngredientDetails />} />
+        <Route path='/feed/:number' element={<OrderInfo />} />
+        <Route path='/profile/orders/:number' element={<OrderInfo />} />
       </Routes>
 
-      <Routes>
-        {backgroundLocation && (
+      {backgroundLocation && (
+        <Routes>
           <Route
             path='/feed/:number'
             element={
@@ -81,8 +85,7 @@ const App = () => {
               </Modal>
             }
           />
-        )}
-        {backgroundLocation && (
+
           <Route
             path='/ingredients/:id'
             element={
@@ -91,8 +94,7 @@ const App = () => {
               </Modal>
             }
           />
-        )}
-        {backgroundLocation && (
+
           <Route
             path='/profile/orders/:number'
             element={
@@ -101,8 +103,8 @@ const App = () => {
               </Modal>
             }
           />
-        )}
-      </Routes>
+        </Routes>
+      )}
     </div>
   );
 };
