@@ -27,11 +27,20 @@ const constructorSlice = createSlice({
         payload: { ...ingredients, id: nanoid() }
       })
     },
-    removeIngredients: (
-      state,
-      action: PayloadAction<TConstructorIngredient[]>
-    ) => {
-      state.ingredients = action.payload;
+    removeIngredients: (state, action) => {
+      state.ingredients = state.ingredients.filter(
+        (item) => item.id !== action.payload
+      );
+    },
+    sortIngredient(state, action) {
+      const { index, position } = action.payload;
+      const payloadIndex = index + position;
+
+      if (payloadIndex >= 0 && payloadIndex < state.ingredients.length) {
+        const ingredientsIndex = state.ingredients[index];
+        state.ingredients[index] = state.ingredients[payloadIndex];
+        state.ingredients[payloadIndex] = ingredientsIndex;
+      }
     },
     clearIngredients: (state) => (state = initialState)
   },
@@ -43,7 +52,11 @@ const constructorSlice = createSlice({
 
 export const { getConstructorItems, getConstructorIngredients } =
   constructorSlice.selectors;
-export const { addIngredient, removeIngredients, clearIngredients } =
-  constructorSlice.actions;
+export const {
+  addIngredient,
+  removeIngredients,
+  sortIngredient,
+  clearIngredients
+} = constructorSlice.actions;
 
 export default constructorSlice;

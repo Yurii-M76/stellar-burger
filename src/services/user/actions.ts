@@ -6,7 +6,7 @@ import {
   logoutApi,
   registerUserApi,
   updateUserApi
-} from '@api';
+} from '../../utils/burger-api';
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { setIsAuthChecked, setUser } from './reducer';
 

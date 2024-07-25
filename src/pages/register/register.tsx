@@ -10,7 +10,6 @@ export const Register: FC = () => {
   const dispatch = useDispatch();
   const handleSubmit = (e: SyntheticEvent) => {
     e.preventDefault();
-    console.log('register');
 
     dispatch(
       register({

@@ -1,8 +1,8 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { TOrder } from '@utils-types';
+import { TOrder } from '../../utils/types';
 import { feeds, orderBurger, orderByNumber, orders } from './actions';
 
-type TInitialState = {
+export type TInitialState = {
   order: TOrder | null;
   feeds: TOrder[];
   name: string | null;

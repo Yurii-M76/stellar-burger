@@ -3,7 +3,7 @@ import { TUser } from '@utils-types';
 import { login, logout, register, userData, userUpdate } from './actions';
 import { deleteCookie, setCookie } from '../../utils/cookie';
 
-type TInitialState = {
+export type TInitialState = {
   user: TUser | null;
   isAuthChecked: boolean;
   error?: string | null;
