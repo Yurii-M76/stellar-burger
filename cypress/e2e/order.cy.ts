@@ -5,7 +5,7 @@ describe('Checkout tests', () => {
       fixture: 'ingredients.json'
     });
 
-    cy.visit('http://localhost:4000/login');
+    cy.visit('/login');
     cy.get('[name=email]').type('test5252@mail.ru');
     cy.get('[name=password]').type('Test12345');
     cy.get('button').contains('Войти').click();

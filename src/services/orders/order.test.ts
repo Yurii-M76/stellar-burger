@@ -27,7 +27,7 @@ describe('Test orderSlice', () => {
     }
   ];
 
-  it('Test Orders action', async () => {
+  it('Checking the Orders action', async () => {
     const actionPending = {
       type: orders.pending.type
     };
@@ -63,7 +63,7 @@ describe('Test orderSlice', () => {
     expect(resultRejected).toEqual(actualRejected);
   });
 
-  it('Test OrderBurger action', async () => {
+  it('Checking the OrderBurger action', async () => {
     const actionPending = {
       type: orderBurger.pending.type
     };

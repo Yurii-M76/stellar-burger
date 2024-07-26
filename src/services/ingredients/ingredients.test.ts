@@ -9,7 +9,7 @@ describe('Test ingredientsSlice', () => {
     error: null
   };
 
-  it('Test getIngredients action', async () => {
+  it('Checking the getIngredients action', async () => {
     const testIngredient = [
       {
         _id: '1',

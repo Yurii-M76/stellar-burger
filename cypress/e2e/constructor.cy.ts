@@ -5,7 +5,7 @@ describe('Test constructor', () => {
       fixture: 'ingredients.json'
     });
     cy.intercept('GET', 'api/auth/user', { fixture: 'user.json' });
-    cy.visit('http://localhost:4000');
+    cy.visit('');
   });
 
   it('Добавить булку в конструктор', () => {
