@@ -18,9 +18,6 @@ export const RegisterUI: FC<RegisterUIProps> = ({
   userName,
   setUserName
 }) => (
-  /*
-    Отображение ошибок и валидация форм в "можно лучше"
-  */
   <main className={styles.container}>
     <div className={`pt-6 ${styles.wrapCenter}`}>
       <h3 className='pb-6 text text_type_main-medium'>Регистрация</h3>
@@ -40,6 +37,7 @@ export const RegisterUI: FC<RegisterUIProps> = ({
               error={false}
               errorText=''
               size='default'
+              autoComplete='username'
             />
           </div>
           <div className='pb-6'>
@@ -52,6 +50,7 @@ export const RegisterUI: FC<RegisterUIProps> = ({
               error={false}
               errorText=''
               size={'default'}
+              autoComplete='email'
             />
           </div>
           <div className='pb-6'>
@@ -59,6 +58,7 @@ export const RegisterUI: FC<RegisterUIProps> = ({
               onChange={(e) => setPassword(e.target.value)}
               value={password}
               name='password'
+              autoComplete='new-password'
             />
           </div>
           <div className={`pb-6 ${styles.button}`}>
